@@ -24,7 +24,7 @@ jobs:
           python-version: '3.13'
 
       - name: Test Python
-        run: python -m py_compile scripts/upload_to_s3.py
+        run: python -m py_compile scripts/migration.py
 
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v4
