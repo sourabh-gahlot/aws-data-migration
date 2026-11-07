@@ -1,4 +1,3 @@
-
 name: AWS Data Migration
 
 on:
@@ -21,7 +20,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: "3.13"
 
       - name: Test Python
         run: python -m py_compile scripts/migration.py
@@ -31,12 +30,11 @@ jobs:
           echo "Repository: $GITHUB_REPOSITORY"
           echo "Branch: $GITHUB_REF"
           echo "Event: $GITHUB_EVENT_NAME"
-          
+
       - name: Inspect OIDC claims
         uses: actions/github-script@v7
         with:
           script: |
-            const core = require('@actions/core');
             const token = await core.getIDToken('sts.amazonaws.com');
             const payload = JSON.parse(
               Buffer.from(token.split('.')[1], 'base64url').toString()
