@@ -26,6 +26,12 @@ jobs:
       - name: Test Python
         run: python -m py_compile scripts/migration.py
 
+      - name: Diagnose GitHub context
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Branch: $GITHUB_REF"
+          echo "Event: $GITHUB_EVENT_NAME"
+
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v4
         with:
