@@ -1,0 +1,4 @@
+Transaction_ID,Customer_ID,Amount
+T001,101,5000
+T002,102,7000
+T003,103,3000
