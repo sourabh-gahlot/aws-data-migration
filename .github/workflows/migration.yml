@@ -29,8 +29,9 @@ jobs:
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::906211190491:role/s3role
+          aws-region: ap-south-1
+          audience: sts.amazonaws.com
 
       - name: Verify AWS identity
         run: aws sts get-caller-identity
